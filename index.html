@@ -64,7 +64,7 @@
           <li><a href="#about">Tasks</a></li>
           <li><a href="#services">Cards</a></li>
           <li><a href="#footer">Register</a></li>
-          <li><a href="#faq">Cart (0)</a></li>
+          <li><a href="#faq" id="top_cart">Cart (0)</a></li>
         </ul>
       </nav><!-- .main-nav-->
 
@@ -160,13 +160,14 @@
 
           <div class="col-md-6 col-lg-4 wow bounceInUp" data-aos="zoom-in" data-aos-delay="100">
             <div class="box">
-              <div class="icon" style="background: #fceef3;"><i class="ion-ios-analytics-outline"
-                  style="color: #ff689b;"></i></div>
+                  <div class="icon" style="background: #fceef3;"><img class="service_img" src="assets/img/walia.png"> </div>
+              <!--<div class="icon" style="background: #fceef3;"><i class="ion-ios-analytics-outline"
+                  style="color: #ff689b;"></i></div> -->
               <h4 class="title"><a href="">Wallia</a></h4>
               <p class="description">Best for longer talk. Non stoppable sessions. Good for any time of the day.</p>
               <div class="row">
                 <div class="col-sm-6">
-                  <select class="form-control" id="walia_quantity">
+                  <select class="form-control" id="wallia_quantity">
                     <option value="">Quantity</option>
                     <option value="1">1</option>
                     <option value="2">2</option>
@@ -182,8 +183,9 @@
           </div>
           <div class="col-md-6 col-lg-4" data-aos="zoom-in" data-aos-delay="200">
             <div class="box">
-              <div class="icon" style="background: #fff0da;"><i class="ion-ios-bookmarks-outline"
-                  style="color: #e98e06;"></i></div>
+              <div class="icon" style="background: #fff0da;"><img class="service_img" src="assets/img/key_kebero.jpg"> </div>
+              <!--<div class="icon" style="background: #fff0da;"><i class="ion-ios-bookmarks-outline"
+                  style="color: #e98e06;"></i></div>-->
               <h4 class="title"><a href="">Key Kebero</a></h4>
               <p class="description">Best perfomant and money saver if used durin the day time.</p>
                 <div class="row">
@@ -204,8 +206,9 @@
 
           <div class="col-md-6 col-lg-4" data-aos="zoom-in" data-aos-delay="300">
             <div class="box">
-              <div class="icon" style="background: #e6fdfc;"><i class="ion-ios-paper-outline"
-                  style="color: #3fcdc7;"></i></div>
+              <div class="icon" style="background: #e6fdfc;"><img class="service_img" src="assets/img/chilada.jpg"></div>
+              <!--<div class="icon" style="background: #e6fdfc;"><i class="ion-ios-paper-outline"
+                  style="color: #3fcdc7;"></i></div>-->
               <h4 class="title"><a href="">Chellada</a></h4>
               <p class="description">Best time and money saver if used during the time </p>
                 <div class="row">
@@ -219,7 +222,7 @@
                     </select>
                   </div>
                   <div class="col-sm-6">
-                    <button id="chellada" disabled type="button" class="btn-submit">Buy</button></div>
+                    <button id="chellada"  type="button" class="btn-submit">Buy</button></div>
                 </div>
             </div>
           </div>
@@ -240,7 +243,7 @@
                 <select id="buy_type" class="form-control">
                   <option value="">Select Type</option>
                   <option value="wallia">Wallia</option>
-                  <option value="challada">Chellada</option>
+                  <option value="chellada">Chellada</option>
                   <option value="kebero">Key Kebero</option>
                 </select>
                 <div class="validate"></div>
@@ -256,7 +259,7 @@
                   </select>
                 <div class="validate"></div>
               </div>
-              <div class="text-center"><button class="btn-submit" type="button" title="Send Message">Buy Card</button></div>
+              <div class="text-center"><button class="btn-submit" type="button" title="Send Message" id="buy_card">Buy Card</button></div>
             </form>
 
           </div>
@@ -275,7 +278,7 @@
 
         <ul id="faq-list" data-aos="fade-up" data-aos-delay="100">
           <li>
-            <a data-toggle="collapse" class="collapsed" href="#faq1">Checkout(0)<i
+            <a data-toggle="collapse" class="collapsed" href="#faq1" id="checkout_icon">Checkout(0)<i
                 class="ion-android-remove"></i></a>
             <div id="faq1" class="collapse" data-parent="#faq-list">
               
@@ -298,18 +301,32 @@
           <li>
             <a data-toggle="collapse" href="#faq2" class="collapsed">Balance<i class="ion-android-remove"></i></a>
             <div id="faq2" class="collapse" data-parent="#faq-list">
-              <p>
-               See your balance here.
-              </p>
+              <table class="table">
+                <tbody id="balance_table">
+ 
+                </tbody>
+              </table>
             </div>
           </li>
 
           <li>
             <a data-toggle="collapse" href="#faq3" class="collapsed">Add Minutes<i class="ion-android-remove"></i></a>
             <div id="faq3" class="collapse" data-parent="#faq-list">
-              <p>
-                Allow the user to add minutes to the card they purchased.
-              </p>
+              <div class="add_balance">
+                <select id="select_card">
+                  <option value="0">Select card:</option>
+                  <option value="chellada">chellada</option>
+                  <option value="wallia">wallia</option>
+                  <option value="kebero">Key Kebero</option>
+                </select>
+              </div>
+              <div class="add_balance">
+                <input type="text" id="minutes_input" name="add_minutes" placeholder="Add Minutes">
+                <div class="text-center">
+                  <button class="btn-submit" type="button" title="Add Minutes" id="add_minutes" >Add</button>
+                </div>
+              </div>
+              
             </div>
           </li>
 
@@ -341,8 +358,9 @@
                 <div class="footer-newsletter">
                   <h4>Our Newsletter</h4>
                   <p>Get tips and tricks about calling internatinal.</p>
-                  <form action="" method="post">
-                    <input type="email" name="email"><input type="submit" value="Subscribe">
+                  <form >
+                    <input type="email" name="email" id="email_subscribe" placeholder="Enter Email">
+                    <input class="btn-submit" type="button" value="Subscribe" id="subscribe_Btn">
                   </form>
                 </div>
 
@@ -392,29 +410,40 @@
               <p>Please register and become a member and unleash the benefits we provide exclusively for members.</p>
               <p>It won't take that long.. We promise.</p>
 
-              <form role="form" class="php-email-form">
+              <form role="form" class="php-email-form" id="registor_form">
                 <div class="form-group">
+                  <i class="fa fa-check-circle"></i>
+                  <i class="fa fa-exclamation-circle"></i>
                   <input type="text" name="name" class="form-control" id="first_name" placeholder="Your First Name"
-                    data-rule="minlen:4" data-msg="Please enter at least 4 chars" />
+                    data-rule="minlen:4" data-msg="Please enter at least 4 chars"/>
+                    <small>Error Message</small>
                   <div class="validate"></div>
                 </div>
                 <div class="form-group">
+                  <i class="fa fa-check-circle"></i>
+                  <i class="fa fa-exclamation-circle"></i>
                   <input type="text" name="name" class="form-control" id="last_name" placeholder="Your Last Name"
                     data-rule="minlen:4" data-msg="Please enter at least 4 chars" />
+                    <small>Error Message</small>
                   <div class="validate"></div>
                 </div>                
                 <div class="form-group">
+                  <i class="fa fa-check-circle"></i>
+                  <i class="fa fa-exclamation-circle"></i>
                   <input type="email" class="form-control" name="email" id="email" placeholder="Your Email"
                     data-rule="email" data-msg="Please enter a valid email" />
+                    <small>Error Message</small>
                   <div class="validate"></div>
                 </div>
                 <div class="form-group">
+                  <i class="fa fa-check-circle"></i>
+                  <i class="fa fa-exclamation-circle"></i>
                   <input type="text" class="form-control" name="phone" id="phone" placeholder="Your Phone"
                     data-rule="number" data-msg="Please enter valid phone number" />
+                    <small>Error Message</small>
                   <div class="validate"></div>
                 </div>                
-
-                <div class="text-center"><a href="#" class="btn-submit" type="button" title="Register">Register</a></div>
+                <div class="text-center"><a href="#registor_form" class="btn-submit" type="button" title="Register" id="registor">Register</a></div>
               </form>
 
             </div>

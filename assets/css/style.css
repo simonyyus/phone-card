@@ -629,6 +629,18 @@ section {
   height: 60px;
 }
 
+/*service imgages 
+--------------------------*/
+.service_img {
+  margin: 0 auto 10px auto;
+  padding-bottom: 30px;
+  display: inline-block;
+  text-align: center;
+  border-radius: 10%;
+  width: 40px;
+  height: 60px;
+}
+
 #services .icon i {
   font-size: 36px;
   line-height: 1;
@@ -1633,3 +1645,65 @@ section {
 #footer .credits a:hover {
   color: #0a98c0;
 }
+
+/* Form registration section
+----------------------------------------------------------
+*/
+.form-group i{
+position: relative;
+visibility:hidden;
+top:35px;
+left:94%;
+}
+.form-group small{
+  position: relative;
+  visibility:hidden;
+  bottom:0px;
+  left:10px;
+  }
+.form-group.success #first-name{
+    border-color: #2ecc71;
+  }
+.form-group.error #last_name {
+    border-color: #e74c3c;
+  }
+  .form-group.success i.fa-check-circle{
+    color: #2ecc71;
+    visibility: visible;
+  }
+  .form-group.error i.fa-exclamation-circle{
+    color: #e74c3c;
+    visibility: visible;
+  }
+  .form-group.error small{
+    color: #e74c3c;
+    visibility: visible;
+  }
+
+  /* add balance section */
+  .text-center #add_minutes{
+  height:32px;
+  position: absolute;
+  right:79%;
+  top:210px;
+  margin-top: 12px;
+  padding: 0px;
+  }
+  .text-center #minutes_input #add_min_lbl {
+    position:relative;
+    left:10px;
+  }
+  .add_balance #select_card{
+    position: relative;
+    top: 2px;
+    left:0px;
+    margin-bottom: 5px;
+  }
+  #subscribe_Btn{
+    height:35px;
+    width: 80px;
+    position: absolute;
+    left:65%;
+    margin-top: 1px;
+    padding: 0px;
+    }
