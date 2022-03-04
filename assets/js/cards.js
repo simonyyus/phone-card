@@ -114,7 +114,7 @@ const addToCheckout = (type,givenQuantity) => {
     }
     else if(type==="wallia"){
       quantity=parseInt(givenQuantity)
-      quantity=parseInt(givenQuantity)
+      unitPrice=cards.wallia.price;
     }
     else{
       quantity=parseInt(givenQuantity)
